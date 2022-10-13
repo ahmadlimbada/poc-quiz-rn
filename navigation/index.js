@@ -18,6 +18,7 @@ const Navigator = () => {
         name="Quiz"
         component={Quiz}
         options={{headerShown: false}}
+        initialParams={{results: 0}}
       />
       <Stack.Screen
         name="Result"

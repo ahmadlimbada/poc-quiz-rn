@@ -1,11 +1,15 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 
-const Result = ({navigation}) => {
+const Result = ({navigation, route}) => {
+  useEffect(() => {
+    console.log('results', route);
+  }, [route]);
+
   return (
-    <View>
+    <View style={styles.container}>
       <View>
-        <Text>Result</Text>
+        <Text>Result: {route.params?.results}</Text>
       </View>
       <View style={styles.bannerContainer}>
         <Image
@@ -35,5 +39,9 @@ const styles = StyleSheet.create({
   bannerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  container: {
+    height: '100%',
+    paddingHorizontal: 16,
   },
 });
